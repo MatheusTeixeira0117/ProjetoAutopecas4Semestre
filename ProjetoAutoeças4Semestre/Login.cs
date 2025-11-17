@@ -33,26 +33,36 @@ namespace ProjetoAutoeças4Semestre
 
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
-
             try
             {
-                 if (!string.IsNullOrWhiteSpace(TxtLoginEmail.Text) && !string.IsNullOrWhiteSpace(TxtLoginSenha.Text))
+                // Validação básica
+                if (!string.IsNullOrWhiteSpace(TxtLoginEmail.Text) &&
+                    !string.IsNullOrWhiteSpace(TxtLoginSenha.Text))
                 {
                     string email = TxtLoginEmail.Text.Trim();
                     string senha = TxtLoginSenha.Text.Trim();
 
-                    // Cria o objeto que faz a consulta
+                    // Objeto de login
                     CadastroFuncionario loginFuncionario = new CadastroFuncionario(email, senha);
-                    MySqlDataReader reader = loginFuncionario.loginFuncionario();
 
-                    // Se achou algum registro
-                    if (reader != null && reader.Read()) 
+                    bool loginOk = loginFuncionario.loginFuncionario();
+
+                    if (loginOk)
                     {
+                        // Garantir que o cursor não fique preso como carregando
+                        Application.UseWaitCursor = false;
+                        this.UseWaitCursor = false;
+                        Cursor.Current = Cursors.Default;
 
-                        this.Hide();
-
+                        // Abre a tela principal
                         FPrincipal principal = new FPrincipal();
                         principal.Show();
+
+                        // Oculta a tela de login
+                        this.Hide();
+
+                        // Fecha o app quando a principal fechar
+                        principal.FormClosed += (s, args) => this.Close();
                     }
                     else
                     {
@@ -61,8 +71,6 @@ namespace ProjetoAutoeças4Semestre
                         TxtLoginSenha.Clear();
                         TxtLoginEmail.Focus();
                     }
-
-                    reader?.Close();
                 }
                 else
                 {
@@ -74,9 +82,11 @@ namespace ProjetoAutoeças4Semestre
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo deu errado" + ex.Message);
+                MessageBox.Show("Algo deu errado: " + ex.Message);
             }
         }
+
+
 
         private void Txtemail_TextChanged(object sender, EventArgs e)
         {

@@ -77,27 +77,34 @@ namespace ProjetoAutoeças4Semestre
             }
         }
 
-        public MySqlDataReader loginFuncionario()
+        public bool loginFuncionario()
         {
             try
             {
-                MySqlConnection mySqlConnect = new MySqlConnection(ConecxaoBanco.conexaoBanco);
-                mySqlConnect.Open();
+                using (MySqlConnection mySqlConnect = new MySqlConnection(ConecxaoBanco.conexaoBanco))
+                {
+                    mySqlConnect.Open();
 
-                string sql = "SELECT * FROM funcionario WHERE email = @Email AND senha = @Senha";
+                    string sql = "SELECT * FROM funcionario WHERE email = @Email AND senha = @Senha";
 
-                MySqlCommand cmd = new MySqlCommand(sql, mySqlConnect);
-                cmd.Parameters.AddWithValue("@Email", this.Email);
-                cmd.Parameters.AddWithValue("@Senha", this.Senha);
+                    using (MySqlCommand cmd = new MySqlCommand(sql, mySqlConnect))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", this.Email);
+                        cmd.Parameters.AddWithValue("@Senha", this.Senha);
 
-                MySqlDataReader reader = cmd.ExecuteReader();
-                return reader; 
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            return reader.Read(); // true se encontrou
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro no Banco de dados - Método Loginfuncionario: " + ex.Message);
-                return null;
+                return false;
             }
+        }
+
     }
-}
 }

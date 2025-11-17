@@ -106,6 +106,36 @@
       <DependentUpon>CadastroNovoFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="ConecxaoBanco.cs" />
+    <Compile Include="Forms\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProcuraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProcuraCliente.Designer.cs">
+      <DependentUpon>FormProcuraCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProcuraPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProcuraPedido.Designer.cs">
+      <DependentUpon>FormProcuraPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProcurarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProcurarProduto.Designer.cs">
+      <DependentUpon>FormProcurarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +152,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroNovoFuncionario.resx">
       <DependentUpon>CadastroNovoFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProcuraCliente.resx">
+      <DependentUpon>FormProcuraCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProcuraPedido.resx">
+      <DependentUpon>FormProcuraPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProcurarProduto.resx">
+      <DependentUpon>FormProcurarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProduto.resx">
+      <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -140,6 +185,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CadastroFuncionario.datasource" />
+    <None Include="Properties\DataSources\CadastroNovoFuncionario.datasource" />
+    <None Include="Properties\DataSources\ConecxaoBanco.datasource" />
+    <None Include="Properties\DataSources\FLogin.datasource" />
+    <None Include="Properties\DataSources\FPrincipal.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\ProjetoAutoeças4Semestre.Forms.FormCliente.datasource" />
+    <None Include="Properties\DataSources\ProjetoAutoeças4Semestre.Forms.FormProcurarProduto.datasource" />
+    <None Include="Properties\DataSources\ProjetoAutoeças4Semestre.Forms.FormProduto.datasource" />
+    <None Include="Properties\DataSources\ProjetoAutoeças4Semestre.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\ProjetoAutoeças4Semestre.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -203,6 +259,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\motor-de-carro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\investimento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procura-de-emprego.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

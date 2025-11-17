@@ -203,6 +203,16 @@ namespace ProjetoAutoeças4Semestre.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap investimento {
+            get {
+                object obj = ResourceManager.GetObject("investimento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lista_de_precos {
             get {
                 object obj = ResourceManager.GetObject("lista-de-precos", resourceCulture);
@@ -226,6 +236,16 @@ namespace ProjetoAutoeças4Semestre.Properties {
         internal static System.Drawing.Bitmap motor_de_carro__1_ {
             get {
                 object obj = ResourceManager.GetObject("motor-de-carro (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap procura_de_emprego {
+            get {
+                object obj = ResourceManager.GetObject("procura-de-emprego", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
